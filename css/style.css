@@ -1,0 +1,1044 @@
+@charset "utf-8";
+
+/* webfont 페이퍼로지 */
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Paperlogy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ========== 기본 세팅 ========== */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    /* Prevent font scaling in landscape */
+
+    -webkit-text-size-adjust: none;
+    /*Chrome, Safari, newer versions of Opera*/
+
+    -moz-text-size-adjust: none;
+    /*Firefox*/
+
+    -ms-text-size-adjust: none;
+    /*Ie*/
+
+    -o-text-size-adjust: none;
+    /*old versions of Opera*/
+
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Pretendard Variable", Pretendard, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #222;
+    background-color: #fffae6;
+}
+
+#wrap {
+    min-width: 1360px;
+}
+
+
+/* 🧡 sidde_bar 사이드 바 ========================= */
+.side_bar {
+    position: fixed;
+    right: 30px;
+    top: 780px;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    z-index: 99;
+}
+
+.side_bar img {
+    display: block;
+    width: 50px;
+
+    cursor: pointer;
+}
+
+/* 🧡 header 헤더 ========================= */
+header {
+    height: 100px;
+
+    font-family: 'Paperlogy';
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #fffae6;
+    color: #222;
+    border-bottom: 4px solid #ff5b38;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    transition:
+        transform 0.35s ease,
+        background-color 0.35s ease,
+        color 0.35s ease;
+}
+
+.inner_header {
+    width: 1780px;
+    margin: 25px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+}
+
+/* 아래로 스크롤할 때 숨김 */
+header.header_hide {
+    transform: translateY(-100%);
+}
+
+
+/* =============== gnb 메뉴 =============== */
+.gnb {
+    display: flex;
+}
+
+.gnb li {
+    margin-left: 167px;
+
+    position: relative;
+}
+
+.gnb li a {
+    display: inline-block;
+
+    /* 꽃을 텍스트 "뒤로" 위치하기 위한 position */
+    position: relative;
+    z-index: 1;
+}
+
+.gnb li::before {
+    content: "";
+    width: 19px;
+    height: 18px;
+
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    z-index: 0;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.gnb li:first-child::before {
+    background-image: url(../images/header/orange_hover.svg);
+}
+
+.gnb li:nth-child(2)::before {
+    background-image: url(../images/header/blue_hover.svg);
+}
+
+.gnb li:nth-child(3)::before {
+    background-image: url(../images/header/yellow_hover.svg);
+    transform: scale(2.8);
+    transform-origin: right top;
+}
+
+.gnb li:nth-child(4)::before {
+    background-image: url(../images/header/green_hover.svg);
+}
+
+.gnb li:nth-child(5)::before {
+    background-image: url(../images/header/brown_hover.svg);
+}
+
+/* 호버 시, 꽃 커짐 */
+.gnb li:hover::before {
+    transform: scale(2.8);
+    transform-origin: right top;
+}
+
+.util {
+    display: flex;
+}
+
+.util li {
+    margin-left: 30px;
+}
+
+/* =========== 🤍타이틀 공통 꾸미기🤍 시작 =========== */
+h2 img {
+    display: block;
+    height: 49px;
+    margin: 0 auto;
+}
+/* =========== 🤍타이틀 공통 꾸미기🤍 시작 =========== */
+
+
+/* 🧡 story_banner 스토리배너 ========================= */
+.flower1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.orange_wrap {
+    width: 100%;
+    height: 200px;
+    background-color: #ff5b38;
+}
+
+.orange_wrap h2 {
+    padding: 135px 0;
+}
+
+.banner_wrap {
+    overflow: hidden;
+    position: relative;
+    /* flower1,2,3 의 부모 */
+}
+
+.flower1,
+.flower2,
+.flower3 {
+    display: block;
+    width: 51px;
+}
+
+.flower1 {
+    position: absolute;
+    top: -15px;
+    right: 564px;
+    transform: rotate(-30deg);
+}
+
+.flower2 {
+    position: absolute;
+    top: 60px;
+    left: 540px;
+    transform: rotate(20deg);
+}
+
+.flower3 {
+    position: absolute;
+    top: 360px;
+    right: 765px;
+}
+
+/* ========== STORY BANNER 꽃 둥둥 모션 ========== */
+
+@keyframes flowerFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(var(--flower-rotate));
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(
+            calc(var(--flower-rotate) + 8deg)
+        );
+    }
+}
+
+/* 꽃마다 움직임 다르게 */
+.flower1 {
+    --flower-rotate: -30deg;
+    animation: flowerFloat 4s ease-in-out infinite;
+}
+
+.flower2 {
+    --flower-rotate: 20deg;
+    animation: flowerFloat 5s ease-in-out infinite;
+    animation-delay: -1.5s;
+}
+
+.flower3 {
+    --flower-rotate: 0deg;
+    animation: flowerFloat 4.5s ease-in-out infinite;
+    animation-delay: -2.5s;
+}
+
+.story_banner {
+    display: block;
+    margin: 0 auto;
+    width: 1920px;
+    height: 480px;
+}
+
+
+/* 🧡  intro 소개 ========================= */
+.text_line_wrap {
+    width: 780px;
+    height: 2200px;
+    margin: 150px auto 0;
+
+    position: relative;
+    /* 아래 꾸밈 부모 */
+}
+
+.we_wrap img {
+    display: block;
+    height: 35px;
+
+    position: absolute;
+    top: 0;
+    left: 293px;
+}
+
+.we_line {
+    position: absolute;
+    top: 22px;
+    right: 0;
+}
+
+.are_wrap img {
+    display: block;
+    height: 35px;
+
+    position: absolute;
+    top: 995px;
+    right: 70px;
+}
+
+.are_line {
+    position: absolute;
+    top: 1020px;
+    right: 195px;
+}
+
+
+/* ========== 노란 꽃 이동 모션 ========== */
+.yellow_flower_wrap img {
+    display: block;
+    width: 28px;
+
+    position: absolute;
+    bottom: 210px;
+    left: 375px;
+    z-index: 2;
+
+    /* 시작: ARE 라인 끝 부근에서 작게 */
+    transform: translate(-20px, -40px) scale(0);
+
+    transition: transform 0.5s ease-out;
+}
+
+/* 이동 완료: 기존 위치와 크기 */
+.yellow_flower_wrap img.active {
+    transform: translate(0, 0) scale(1);
+}
+
+
+.logo_ani {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.logo_ani video {
+    display: block;
+    width: 60%;
+    height: auto;
+    margin-left: 250px;
+}
+
+/* ---------- WE / ARE 라인 애니메이션 ---------- */
+.we_line path,
+.are_line path {
+    fill: none;
+    stroke-dasharray: var(--path-length);
+    stroke-dashoffset: var(--path-length);
+}
+
+.we_line.active path {
+    animation: drawWeLine 0.8s ease-out forwards;
+}
+
+.are_line.active path {
+    animation: drawAreLine 1s ease-out forwards;
+}
+
+@keyframes drawWeLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawAreLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* 🧡 about 브랜드 ========================= */
+#about {
+    width: 1920px;
+    margin: 0 auto;
+}
+
+#about h2 img {
+    margin: 500px auto 0;
+}
+
+.inner_story {
+    width: 1320px;
+    height: 1545px;
+    margin: 0 auto;
+
+    position: relative;
+    /* .deco 의 부모 */
+}
+
+.first_line {
+    position: absolute;
+    top: -285px;
+    left: -520px;
+}
+
+/* ========== 🤍공통 꾸미기 타이틀 라인 애니메이션🤍 시작 ========== */
+.first_line path,
+.diy_line path,
+.store_line path {
+    fill: none;
+
+    stroke-dasharray: 2500;
+    stroke-dashoffset: 2500;
+}
+
+/* FIRST STITCH 기존 방향 유지 */
+.first_line.active path {
+    animation: drawLine1 2.5s ease forwards;
+}
+
+@keyframes drawLine1 {
+    from {
+        stroke-dashoffset: 4000;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* KOK KIT / OFF LINE STORE 역방향 */
+.diy_line.active path,
+.store_line.active path {
+    animation: drawLineReverse 2.5s ease forwards;
+}
+
+@keyframes drawLineReverse {
+    from {
+        stroke-dashoffset: -4000;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ========== 🤍공통 꾸미기 타이틀 라인 애니메이션🤍 끝 ========== */
+
+.story_wrap1 {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 237px;
+}
+
+.story_wrap1 img {
+    display: block;
+    width: 700px;
+}
+
+.story_wrap1 p {
+    font-weight: 600;
+    margin: 0 0 40px 65px;
+}
+
+.story_wrap2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 385px;
+}
+
+.story_wrap2 img {
+    display: block;
+    width: 660px;
+}
+
+.story_wrap2 p {
+    font-weight: 600;
+    text-align: right;
+    margin: 0 65px 40px 0;
+}
+
+.deco {
+    position: absolute;
+    /* .inner_story 의 자식 */
+    transform: scale(0.8);
+}
+
+.deco1 {
+    top: 455px;
+    left: 975px;
+}
+
+.deco2 {
+    top: 580px;
+    left: 620px;
+}
+
+.deco3 {
+    top: 810px;
+    left: 1035px;
+}
+
+.deco4 {
+    top: 885px;
+    left: 950px;
+}
+
+.deco5 {
+    top: 1200px;
+    left: 180px;
+}
+
+.deco6 {
+    top: 1365px;
+    left: 1235px;
+}
+
+.deco7 {
+    top: 1545px;
+    left: 270px;
+}
+
+
+/* ========== 🤍공통 꾸미기 데코 둥둥 모션🤍 시작 ========== */
+@keyframes decoFloat1 {
+    0%, 100% {
+        transform: translateY(0) scale(0.8) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-18px) scale(0.8) rotate(3deg);
+    }
+}
+
+@keyframes decoFloat2 {
+    0%, 100% {
+        transform: translate(0, 0) scale(0.8) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(12px, -14px) scale(0.8) rotate(-4deg);
+    }
+}
+
+@keyframes decoFloat3 {
+    0%, 100% {
+        transform: translate(0, 0) scale(0.8) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-10px, 16px) scale(0.8) rotate(3deg);
+    }
+}
+
+/* ABOUT 데코 */
+.deco1, .deco4, .deco7 {
+    animation: decoFloat1 4s ease-in-out infinite;
+}
+
+.deco2, .deco5 {
+    animation: decoFloat2 5s ease-in-out infinite;
+}
+
+.deco3, .deco6 {
+    animation: decoFloat3 4.5s ease-in-out infinite;
+}
+
+/* DIY 데코 */
+.deco08 {
+    animation: decoFloat2 4.8s ease-in-out infinite;
+}
+
+.deco09 {
+    animation: decoFloat1 3.8s ease-in-out infinite;
+}
+
+.deco10 {
+    animation: decoFloat3 5.2s ease-in-out infinite;
+}
+/* ========== 🤍공통 꾸미기 데코 둥둥 모션🤍 끝 ========== */
+
+.brand_story_video {
+    /* transform: scale(0.8); */
+    margin-top: 580px;
+}
+
+
+/* 🧡 DIY 키트소개 ========================= */
+#diy {
+    width: 1920px;
+    position: relative;
+    /* .diy_line 의 부모 */
+}
+
+#diy h2 img {
+    margin: 160px auto 0;
+}
+
+.diy_line {
+    display: block;
+    position: absolute;
+    /* #diy 의 자식 */
+    top: 30px;
+    left: 0;
+}
+
+.diy_wrap {
+    width: 1620px;
+    margin-top: 150px;
+
+    display: flex;
+    align-items: flex-end;
+
+    position: relative;
+    /* 꾸미기 요소 부모 */
+}
+
+.diy_wrap .img_wrap img {
+    display: block;
+    width: 1092px;
+    height: 650px;
+}
+
+.text_wrap {
+    width: 330px;
+    margin: 0 0 40px 65px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.text_wrap h3 img {
+    display: block;
+    height: 49px;
+}
+
+.text_wrap p {
+    font-weight: 600;
+}
+
+.deco0 {
+    position: absolute;
+    /* #diy 의 자식 */
+    transform: scale(0.8);
+}
+
+.deco08 {
+    top: 140px;
+    right: 0;
+}
+
+.deco09 {
+    bottom: 227px;
+    right: 435px;
+}
+
+.deco10 {
+    bottom: 0;
+    right: 57px;
+}
+
+
+.diy_banner_wrap {
+    margin-top: 245px;
+
+    position: relative;
+    /* .inner_diy_banner 의 부모 */
+}
+
+.inner_diy_banner {
+    width: 535px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    position: absolute;
+    /* .diy_banner_wrap 의 자식 */
+    top: 175px;
+    left: 740px;
+    z-index: 5;
+}
+
+.inner_diy_banner h3 img {
+    display: block;
+    height: 279px;
+}
+
+.inner_diy_banner p {
+    font-family: 'Paperlogy';
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.black_line {
+    position: absolute;
+    top: 370px;
+    left: 935px;
+}
+
+/* ========== DIY 배너 블랙 라인 모션 ========== */
+
+/* 기본 상태: 선 숨기기 */
+.black_line path {
+    fill: none;
+    stroke-dasharray: var(--black-length);
+    stroke-dashoffset: var(--black-length);
+}
+
+/* 배너 진입 시 선 그리기 */
+.black_line.active path {
+    animation: drawBlackLine 1s ease-in-out forwards;
+}
+
+@keyframes drawBlackLine {
+    from {
+        stroke-dashoffset: var(--black-length);
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.diy_banner_wrap .banner {
+    display: block;
+    width: 1920px;
+}
+
+
+/* 🧡 store 스토어 ========================= */
+#store {
+    position: relative;
+    /* .store_line + .store_bg img 의 부모 */
+    padding-bottom: 180px;
+
+    overflow: hidden;
+}
+
+#store h2 img {
+    margin: 270px auto 0;
+}
+
+.store_line {
+    position: absolute;
+    /* #store 의 자식 */
+    top: 240px;
+    right: -230px;
+}
+
+.inner_store {
+    width: 1320px;
+    height: 635px;
+    margin: 175px auto 0;
+
+    display: flex;
+}
+
+.images_wrap {
+    width: 850px;
+    height: 635px;
+    position: relative;
+    /* 이미지들 부모 */
+}
+
+.store_images img,
+.popup_images img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    /* .images_wrap 의 자식 */
+    top: 0;
+    left: 0;
+}
+
+.tab_wrap {
+    padding: 125px 100px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 55px;
+
+    border: 2px solid #E2D29F;
+    border-left: none;
+}
+
+.tab_wrap h3 img {
+    display: block;
+    height: 34px;
+}
+
+.button_wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.button_wrap button {
+    display: block;
+    width: 10px;
+
+    border: none;
+}
+
+.green_arrow {
+    background: url(../images/store/green_arrow.svg) no-repeat center;
+}
+
+.blue_arrow {
+    background: url(../images/store/blue_arrow.svg) no-repeat center;
+}
+
+.location {
+    margin-top: 18px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: #c9c9c9c9;
+
+    position: relative;
+    /* .bar span 의 부모 */
+}
+
+.bar span {
+    width: calc(100% / 3);
+    height: 4px;
+
+    position: absolute;
+    /* .bar 의 자식 */
+    top: 0;
+    left: 0;
+}
+
+.green_bar {
+    background-color: #3E8B47;
+}
+
+.blue_bar {
+    background-color: #2558D8;
+}
+
+/* ========== 🤍공통 꾸미기 STORE / POP-UP 이미지 전환🤍 시작 ========== */
+
+/* 기본: 모든 이미지 숨김 */
+.store_images img,
+.popup_images img {
+    display: none;
+}
+
+/* 선택된 이미지만 표시 */
+.store_images img.active,
+.popup_images img.active {
+    display: block;
+}
+
+/* 화살표 버튼 */
+.green_arrow,
+.blue_arrow {
+    cursor: pointer;
+}
+/* ========== 🤍공통 꾸미기 STORE / POP-UP 이미지 전환🤍 끝 ========== */
+
+
+.store_bg img {
+    width: 1980px;
+
+    position: absolute;
+    /* #store 의 자식 */
+    bottom: -220px;
+    left: -35px;
+    z-index: -1;
+}
+
+/* 🧡 footer 풋터 ========================= */
+.footer_bg {
+    width: 100%;
+    height: 400px;
+    background: url(../images/footer/footer_bg.png) no-repeat center;
+
+    position: relative;
+    /* .line의 부모 */
+}
+
+.inner_footer {
+    width: 1320px;
+    height: 400px;
+    margin: 0 auto;
+    padding-top: 56px;
+    padding-bottom: 47px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #ffffff;
+}
+
+.inner_footer li {
+    cursor: pointer;
+}
+
+/* 이너풋터 왼쪽 자식 */
+.left_link ul {
+    display: flex;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+.left_link ul li {
+    margin-right: 30px;
+}
+
+.newsletter p {
+    font-size: 24px;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.newsletter form {
+    width: 381px;
+    height: 44px;
+    padding-left: 20px;
+    padding-right: 11px;
+    box-sizing: border-box;
+
+    background-color: #fffae6;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.newsletter input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.newsletter button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.newsletter button img {
+    display: block;
+}
+
+input::placeholder {
+    color: #ff5b38;
+    font-size: 18px;
+}
+
+
+/* 이너풋터 오른쪽 자식 */
+.right_link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.right_link ul {
+    display: flex;
+}
+
+.right_link ul li {
+    margin-left: 30px;
+}
+
+.right_link ul li img {
+    display: block;
+    width: 52px;
+}
+
+.right_link .footer_nav {
+    margin-top: 46px;
+    font-weight: 500;
+}
+
+.right_link p {
+    margin-top: 13px;
+    font-size: 12px;
+}
+
+#footer .line {
+    position: absolute;
+    top: 131px;
+    left: 0;
+    z-index: 1;
+
+    pointer-events: none;
+    /* z-index로 인해 뉴스레터 포인트가 방해되니 라인 포인트 none 하기 */
+}
+
+#footer .line img {
+    display: block;
+    width: 100%;
+}
