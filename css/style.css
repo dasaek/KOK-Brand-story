@@ -234,7 +234,7 @@ h2 img {
 }
 
 .orange_wrap h2 {
-    padding: 130px 0;
+    padding: 135px 0;
 }
 
 .banner_wrap {
@@ -416,8 +416,8 @@ h2 img {
 
 /* 🧡 about 브랜드 ========================= */
 #about {
-    width: 1920px;
-    margin: 0 auto;
+    width: 100%;
+    overflow: clip;
 }
 
 #about h2 img {
@@ -624,9 +624,9 @@ h2 img {
 
 /* 🧡 DIY 키트소개 ========================= */
 #diy {
-    width: 1920px;
+    width: 100%;
     position: relative;
-    /* .diy_line 의 부모 */
+    overflow: clip;
 }
 
 #diy h2 img {
