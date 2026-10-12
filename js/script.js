@@ -64,7 +64,7 @@ const weObserver = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.7
+    threshold: 0.3
 });
 
 weObserver.observe(weLine);
